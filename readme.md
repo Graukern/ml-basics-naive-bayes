@@ -9,14 +9,26 @@
 | Файл | Описание |
 | --- | --- |
 | `src/` | исходный код, который используется в презентации |
+| `src/naive_bayes.ipynb` | ноутбук: данные, реализация, эксперименты |
 
 ## Данные
 
-Russian Language Toxic Comments (Kaggle):
-https://www.kaggle.com/datasets/blackmoon/russian-language-toxic-comments
+Новости Lenta.ru (Kaggle):
+https://www.kaggle.com/datasets/yutkin/corpus-of-russian-news-articles-from-lenta
 
-14 412 комментариев с 2ch и Pikabu, бинарная метка `toxic`.
+Более 800 тысяч новостей за 1999–2019 годы. Используем заголовок (`title`) и рубрику (`topic`).
 
 ## Запуск кода
 
-Будет добавлено вместе с ноутбуком.
+Python 3.12.
+
+1. Скачать `lenta-ru-news.csv` по ссылке выше и положить в `src/data/`
+   (архив `.bz2` или `.zip` распаковывать не обязательно).
+2. Установить зависимости и открыть ноутбук:
+
+```bash
+pip install -r src/requirements.txt
+jupyter notebook src/naive_bayes.ipynb
+```
+
+При первом запуске ноутбук создаёт `src/data/lenta_titles.csv` с нужными колонками.
